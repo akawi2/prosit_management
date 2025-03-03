@@ -5,7 +5,7 @@ import re
 from django.http import HttpResponse, JsonResponse
 from pptx import Presentation
 from docxtpl import DocxTemplate
-
+from django.views.decorators.csrf import csrf_exempt
 from prosit_management import settings
 
 def remove_special_characters(input_string):
@@ -13,6 +13,7 @@ def remove_special_characters(input_string):
     cleaned_string = re.sub(r'[^a-zA-Z0-9\s]', '', input_string)
     return cleaned_string.strip()
 
+@csrf_exempt
 def downloadCER(request):
     if request.method == 'POST':
         template = request.POST.get('template')
