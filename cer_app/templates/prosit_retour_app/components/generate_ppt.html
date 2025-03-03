@@ -1,0 +1,19 @@
+<div id="create-ppt" class="content" style="display: block  ;">
+    <form class="text-center mt-8" action="{% url 'create_ppt' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p class="text-lg font-bold my-3">PROSIT RETOUR</p>
+        <p class="text-lg">Load your prosit aller</p>
+        <input type="file" id="file1" name="file1" class="mt-4 mb-2 p-2 border rounded">
+
+        <button type="submit" id="uploadButton" class="w-72 h-10 bg-blue-400 rounded-lg mt-4"  style="" onclick="generationPPTOnGoing()">
+            <span class="text-lg" style="color: white;">Generate PPT</span>                
+        </button>
+
+        <center>
+          <div id="loader-ppt-generation" class="spinner-border text-primary flex justify-center items-center text-center m-2" role="status" style="display : none;">
+            <span class="sr-only">Loading...</span>
+          </div> 
+        </center>
+
+    </form>
+  </div>
