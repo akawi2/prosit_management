@@ -10,7 +10,7 @@ COPY requirements.txt /app/
 # Install the dependencies
 RUN pip install -r requirements.txt
 
-RUN python manage.py collectstatic --noinput
+# RUN python manage.py collectstatic --noinput
 
 # Copy the entire project
 COPY . /app/
