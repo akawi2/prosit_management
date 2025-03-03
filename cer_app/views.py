@@ -113,6 +113,7 @@ def generateCER(request):
                 
         return redirect('cer_presentation')
 
+@csrf_exempt
 def generateRetour(request):
     if request.method == 'POST':
         if 'file1' not in request.FILES:
