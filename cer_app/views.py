@@ -1,5 +1,6 @@
 import datetime
 import json
+import os
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
@@ -39,7 +40,7 @@ def readPdfFile(file):
     return {'content': text.strip()}
 
 def prompt(message):
-        genai.configure(api_key="AIzaSyCPj-lEv9ZEXrcnKqk3663SUjED2ORRN1Q")
+        genai.configure(api_key=os.getenv('API_KEY'))
 
         # Create the model
         generation_config = {
